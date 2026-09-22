@@ -1,9 +1,11 @@
 package com.miapp.modelo;
 
+import java.util.ArrayList;
+
 /**
  * Modelo: representa la entidad Estudiante.
  */
-public final class Estudiante {  
+public final class Estudiante extends Persona {  
 
     private static int totalEstudiantes = 0;
     public static final int PROMEDIO_MINIMO = 0;
@@ -11,18 +13,16 @@ public final class Estudiante {
     public static final String CARRERA_PREDETERMINADA = "Sin especificar";
 
     // ── Atributos de instancia ────────────────────────────────────────────────
-    private int    id;
-    private String nombre;
-    private String apellido;
+   
     private String carrera;
     private double promedio;
+    private ArrayList<Curso>cursos;
 
     // ── Constructor ───────────────────────────────────────────────────────────
 
     public Estudiante(int id, String nombre, String apellido, String carrera, double promedio) {
-        this.id       = id;
-        this.nombre   = nombre;
-        this.apellido = apellido;
+        super(id, nombre, apellido);
+        
         this.carrera  = carrera;
    
         if (promedio >= PROMEDIO_MINIMO && promedio <= PROMEDIO_MAXIMO) {
@@ -52,18 +52,7 @@ public final class Estudiante {
 
     // ── Getters ──────────────────────────────────────────────────────────────
 
-    public int getId() { 
-        return id; 
-    }
-
-    public String getNombre() { 
-        return nombre; 
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
+    
     public String getCarrera() { 
         return carrera; 
     }
@@ -74,17 +63,7 @@ public final class Estudiante {
 
     // ── Setters ──────────────────────────────────────────────────────────────
 
-    public void setId(int id) { 
-        this.id = id; 
-    }
-
-    public void setNombre(String nombre) { 
-        this.nombre = nombre; 
-    }
-
-    public void setApellido(String apellido) { 
-        this.apellido = apellido; 
-    }
+   
 
     public void setCarrera(String carrera) { 
         this.carrera = carrera; 
@@ -106,10 +85,7 @@ public final class Estudiante {
      */
     @Override
     public final String toString() {
-        return "ID: " + id
-             + " | Nombre: " + nombre
-             + " | Apellido: " + apellido   
-             + " | Carrera: " + carrera
+        return  " | Carrera: " + carrera
              + " | Promedio: " + String.format("%.2f", promedio);
     }
 }
