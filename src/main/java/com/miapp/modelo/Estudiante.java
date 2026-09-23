@@ -11,6 +11,7 @@ public final class Estudiante extends Persona {
     public static final int PROMEDIO_MINIMO = 0;
     public static final int PROMEDIO_MAXIMO = 5;
     public static final String CARRERA_PREDETERMINADA = "Sin especificar";
+    public static final int MAX_MATERIAS=7;
 
     // ── Atributos de instancia ────────────────────────────────────────────────
    
@@ -78,6 +79,11 @@ public final class Estudiante extends Persona {
         if (p >= PROMEDIO_MINIMO && p <= PROMEDIO_MAXIMO) {
             this.promedio = p;
         }
+    }
+    
+    @Override
+    public double calcularPago() {
+        return 0.0;
     }
 
     /**

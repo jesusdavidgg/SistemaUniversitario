@@ -19,7 +19,9 @@ public class Profesor extends Persona {
     public static Double getSalarioBase() {
         return salarioBase;
     }
-    
+@Override
+    public double calcularPago() {
+        return 0.0;}    
     
     
     
