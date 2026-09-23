@@ -13,7 +13,7 @@ public abstract class Persona {
     
     
     
-    private int    id;
+    protected int    id;
     private String nombre;
     private String apellido;
 
@@ -66,7 +66,14 @@ public abstract class Persona {
     
     
     }
-    
+    @Override
+            
+    public String toString(){
+        return "Id"+ id
+                + " | Nombre" + nombre
+                + " | Apellido"+ apellido;
+        
+    }
     
   
     

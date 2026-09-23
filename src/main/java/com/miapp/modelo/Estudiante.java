@@ -85,7 +85,7 @@ public final class Estudiante extends Persona {
      */
     @Override
     public final String toString() {
-        return  " | Carrera: " + carrera
+        return super.toString() + " | Carrera: " + carrera
              + " | Promedio: " + String.format("%.2f", promedio);
     }
 }
