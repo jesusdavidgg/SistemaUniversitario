@@ -8,7 +8,7 @@ package com.miapp.modelo;
  *
  * @author Estudiante
  */
-public class Profesor extends Persona {
+public class Profesor extends Persona  {
     
     private  final double salarioBase;
 
