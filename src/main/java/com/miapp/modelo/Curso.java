@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.miapp.modelo;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,11 +13,15 @@ public class Curso {
     
     private int codigo;
     private int creditos ;
+    private ArrayList<Estudiante> estudiantes;
 
     public Curso(int codigo, int creditos) {
         this.codigo = codigo;
         this.creditos = creditos;
+        this.estudiantes = new ArrayList<>();
     }
+
+    
 
     public int getCodigo() {
         return codigo;
@@ -35,6 +40,17 @@ public class Curso {
     }
     
     
+    public ArrayList<Estudiante> getEstudiantes(){
+        return estudiantes;
+    }
     
+    
+    public boolean agregarEstudiante(Estudiante e){
+        if (e==null || estudiantes.contains(e)){
+            return false;
+        }
+        estudiantes.add(e);
+        return true;
+    }
     
 }

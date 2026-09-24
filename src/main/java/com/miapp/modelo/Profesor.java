@@ -23,7 +23,7 @@ public class Profesor extends Persona {
         return salarioBase;
     }
     
-    public void impartirClases(){
+    public void impartirClase(){
     System.out.println(getNombre()+" "+ getApellido() + " está impartiendo su clase.");
     }
     

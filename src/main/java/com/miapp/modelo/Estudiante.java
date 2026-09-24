@@ -1,11 +1,12 @@
 package com.miapp.modelo;
 
+import com.miapp.servicios.Inscribible;
 import java.util.ArrayList;
 
 /**
  * Modelo: representa la entidad Estudiante.
  */
-public final class Estudiante extends Persona {  
+public final class Estudiante extends Persona implements Inscribible {  
 
     private static int totalEstudiantes = 0;
     public static final int PROMEDIO_MINIMO = 0;
@@ -32,6 +33,7 @@ public final class Estudiante extends Persona {
             this.promedio = 0.0;  // Por defecto si está fuera de rango
         }
         
+        this.cursos = new ArrayList<>();
         // nuevo: Incrementa el contador estático de estudiantes
         totalEstudiantes++;
     }
@@ -94,4 +96,25 @@ public final class Estudiante extends Persona {
         return super.toString() + " | Carrera: " + carrera
              + " | Promedio: " + String.format("%.2f", promedio);
     }
+    
+    @Override
+public boolean inscribir(Curso curso) {
+    if (curso == null) {
+        return false;                       
+    }
+    if (cursos.contains(curso)) {
+        return false;                      
+    }
+    if (cursos.size() >= MAX_MATERIAS) {
+        return false;                     
+    }
+
+    cursos.add(curso);                   
+    curso.agregarEstudiante(this);       
+    return true;
+}
+
+public ArrayList<Curso> getCursos() {
+    return cursos;
+}
 }
