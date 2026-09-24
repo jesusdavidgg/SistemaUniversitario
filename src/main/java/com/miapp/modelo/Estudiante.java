@@ -16,6 +16,7 @@ public final class Estudiante extends Persona implements Inscribible {
 
     // ── Atributos de instancia ────────────────────────────────────────────────
    
+    
     private String carrera;
     private double promedio;
     private ArrayList<Curso>cursos;
