@@ -10,18 +10,27 @@ package com.miapp.modelo;
  */
 public class Profesor extends Persona {
     
-    private static final Double salarioBase=1000.0;
+    private  final double salarioBase;
 
-    public Profesor(int id, String nombre, String apellido) {
+    public Profesor(double salarioBase, int id, String nombre, String apellido) {
         super(id, nombre, apellido);
+        this.salarioBase = salarioBase;
     }
 
-    public static Double getSalarioBase() {
+    
+
+    public double getSalarioBase() {
         return salarioBase;
     }
+    
+    public void impartirClases(){
+    System.out.println(getNombre()+" "+ getApellido() + " está impartiendo su clase.");
+    }
+    
+    
 @Override
     public double calcularPago() {
-        return 0.0;}    
+        return salarioBase;}    
     
     
     
